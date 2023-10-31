@@ -1,0 +1,40 @@
+<form action="{% url 'web:formulario' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p> 
+        <label for="id_nombre">Nombre:</label>
+        <input id="id_nombre" type="text" name="nombre" maxlength="100" required>
+    </p>
+    <p>
+        <label for="id_precio">Password:</label>
+        <input id="id_precio" type="password" name="precio" maxlength="12" required>
+    </p>
+    <p>
+        <label for="id_stock">Email:</label>
+        <input id="id_stock" type="email" name="stock" maxlength="100" required>
+    </p>
+    <p> 
+        <label for="id_nombre">Edad:</label>
+        <input id="id_nombre" type="text" name="nombre" maxlength="100" required>
+    </p>
+    <p> 
+        <label for="id_nombre">Auto:</label>
+        <input id="id_nombre" type="text" name="nombre" maxlength="100" required>
+    </p>
+    <p> 
+        <label for="id_nombre">Estacionamiento:</label>
+        <input id="id_nombre" type="text" name="nombre" maxlength="100" required>
+    </p>
+    <p> 
+        <label for="id_nombre">Comuna:</label>
+        <input id="id_nombre" type="text" name="nombre" maxlength="100" required>
+    </p>
+  <button type="submit">Crear productos</button>
+</form>
+
+
+<ul>
+    {% for obj in response %}
+        <li>{{ obj.id }} - {{ obj.nombre }} {{ obj.email }}</li>
+    {% endfor %}
+</ul>
